@@ -40,10 +40,14 @@ public class Messages {
                 .append("; Phone: ")
                 .append(person.getPhone())
                 .append("; Email: ")
-                .append(person.getEmail())
-                .append("; Address: ")
-                .append(person.getAddress())
-                .append("; Tags: ");
+                .append(person.getEmail());
+        if (person.hasAddress()) {
+            builder.append("; Address: ").append(person.getAddress());
+        }
+        if (!person.getRemark().value.isEmpty()) {
+            builder.append("; Remark: ").append(person.getRemark());
+        }
+        builder.append("; Tags: ");
         person.getTags().forEach(builder::append);
         return builder.toString();
     }
