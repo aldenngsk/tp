@@ -36,4 +36,10 @@ public class RemarkCommandParserTest {
         assertParseFailure(parser, " x r/Anything",
                 String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemarkCommand.MESSAGE_USAGE));
     }
+
+    @Test
+    public void parse_missingRemarkPrefix_failure() {
+        assertParseFailure(parser, " 1 Anything",
+                String.format(MESSAGE_INVALID_COMMAND_FORMAT, RemarkCommand.MESSAGE_USAGE));
+    }
 }
