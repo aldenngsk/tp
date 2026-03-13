@@ -1,7 +1,7 @@
 package seedu.address.logic.commands;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandFailure;
 import static seedu.address.logic.commands.CommandTestUtil.assertCommandSuccess;
 import static seedu.address.testutil.TypicalIndexes.INDEX_FIRST_PERSON;
@@ -98,13 +98,13 @@ public class RemarkCommandTest {
         RemarkCommand remarkFirstCommand = new RemarkCommand(INDEX_FIRST_PERSON, new Remark("First"));
         RemarkCommand remarkSecondCommand = new RemarkCommand(INDEX_SECOND_PERSON, new Remark("Second"));
 
-        assertTrue(remarkFirstCommand.equals(remarkFirstCommand));
+        assertEquals(remarkFirstCommand, remarkFirstCommand);
 
         RemarkCommand remarkFirstCommandCopy = new RemarkCommand(INDEX_FIRST_PERSON, new Remark("First"));
-        assertTrue(remarkFirstCommand.equals(remarkFirstCommandCopy));
+        assertEquals(remarkFirstCommand, remarkFirstCommandCopy);
 
-        assertFalse(remarkFirstCommand.equals(1));
-        assertFalse(remarkFirstCommand.equals(null));
-        assertFalse(remarkFirstCommand.equals(remarkSecondCommand));
+        assertNotEquals(remarkFirstCommand, 1);
+        assertNotEquals(remarkFirstCommand, null);
+        assertNotEquals(remarkFirstCommand, remarkSecondCommand);
     }
 }
