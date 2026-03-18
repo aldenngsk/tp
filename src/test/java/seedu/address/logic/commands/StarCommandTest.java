@@ -89,7 +89,8 @@ public class StarCommandTest {
         model.setPerson(personToStar, starredPerson);
 
         StarCommand starCommand = new StarCommand(INDEX_FIRST_PERSON);
-        String expectedMessage = String.format(StarCommand.MESSAGE_PERSON_ALREADY_STARRED, Messages.format(starredPerson));
+        String expectedMessage = String.format(
+            StarCommand.MESSAGE_PERSON_ALREADY_STARRED, Messages.format(starredPerson));
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
 

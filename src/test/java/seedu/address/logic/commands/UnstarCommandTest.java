@@ -30,8 +30,9 @@ public class UnstarCommandTest {
     @Test
     public void execute_validIndexUnfilteredList_success() {
         Person personToUnstar = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-        Person starredPerson = new Person(personToUnstar.getName(), personToUnstar.getPhone(), personToUnstar.getEmail(),
-                personToUnstar.getAddress(), personToUnstar.getRemark(), personToUnstar.getTags(), true);
+        Person starredPerson = new Person(personToUnstar.getName(), personToUnstar.getPhone(),
+            personToUnstar.getEmail(), personToUnstar.getAddress(), personToUnstar.getRemark(),
+            personToUnstar.getTags(), true);
         model.setPerson(personToUnstar, starredPerson);
 
         UnstarCommand unstarCommand = new UnstarCommand(INDEX_FIRST_PERSON);
@@ -49,8 +50,9 @@ public class UnstarCommandTest {
     @Test
     public void execute_validIndexFilteredList_success() {
         Person personToUnstar = model.getFilteredPersonList().get(INDEX_FIRST_PERSON.getZeroBased());
-        Person starredPerson = new Person(personToUnstar.getName(), personToUnstar.getPhone(), personToUnstar.getEmail(),
-                personToUnstar.getAddress(), personToUnstar.getRemark(), personToUnstar.getTags(), true);
+        Person starredPerson = new Person(personToUnstar.getName(), personToUnstar.getPhone(),
+            personToUnstar.getEmail(), personToUnstar.getAddress(), personToUnstar.getRemark(),
+            personToUnstar.getTags(), true);
         model.setPerson(personToUnstar, starredPerson);
         showPersonAtIndex(model, INDEX_FIRST_PERSON);
 
