@@ -87,9 +87,9 @@ Examples:
 - `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
 - `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
 
-### Listing all persons : `list`
+### Listing all contacts : `list`
 
-Shows a list of all persons in the address book.
+Shows a list of all contacts in the address book.
 
 - Starred contacts are always shown before unstarred contacts.
 - Within each group (starred or unstarred), contacts keep the app's existing ordering behavior.
@@ -229,10 +229,10 @@ _Details coming soon ..._
 
 | Action     | Format, Examples                                                                                                                            |
 | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Add**    | `add n/NAME p/PHONE_NUMBER e/EMAIL [a/ADDRESS] [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com t/friend t/colleague` |
+| **Add**    | `add n/NAME p/PHONE e/EMAIL [a/ADDRESS] [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com t/friend t/colleague` |
 | **Clear**  | `clear`                                                                                                                                     |
 | **Delete** | `delete INDEX`<br> e.g., `delete 3`                                                                                                         |
-| **Edit**   | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                 |
+| **Edit**   | `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`                 |
 | **Find**   | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`                                                                                  |
 | **List**   | `list`                                                                                                                                      |
 | **Star**   | `star INDEX`<br> e.g., `star 2`                                                                                                             |

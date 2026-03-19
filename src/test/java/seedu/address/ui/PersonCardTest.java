@@ -50,8 +50,7 @@ public class PersonCardTest {
         Person person = new PersonBuilder().withStarred(true).build();
 
         runFxAndWait(() -> {
-            assertDoesNotThrow(() -> new PersonCard(person, 1));
-            PersonCard card = new PersonCard(person, 1);
+            PersonCard card = assertDoesNotThrow(() -> new PersonCard(person, 1));
             attachToStage(card);
 
             Label starredIndicator = (Label) card.getRoot().lookup("#starredIndicator");
@@ -72,8 +71,7 @@ public class PersonCardTest {
         Person person = new PersonBuilder().withNoAddress().withStarred(false).build();
 
         runFxAndWait(() -> {
-            assertDoesNotThrow(() -> new PersonCard(person, 1));
-            PersonCard card = new PersonCard(person, 1);
+            PersonCard card = assertDoesNotThrow(() -> new PersonCard(person, 1));
             attachToStage(card);
 
             Label starredIndicator = (Label) card.getRoot().lookup("#starredIndicator");
