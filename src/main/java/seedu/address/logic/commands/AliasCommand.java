@@ -21,11 +21,6 @@ public class AliasCommand extends Command {
 
     private static final AliasRegistry aliasRegistry = new AliasRegistry();
 
-    /** Returns the shared alias registry used by the application. */
-    public static AliasRegistry getAliasRegistry() {
-        return aliasRegistry;
-    }
-
     private final String action;
     private final String alias;
     private final String command;
@@ -37,6 +32,11 @@ public class AliasCommand extends Command {
         this.action = action;
         this.alias = alias;
         this.command = command;
+    }
+
+    /** Returns the shared alias registry used by the application. */
+    public static AliasRegistry getAliasRegistry() {
+        return aliasRegistry;
     }
 
     @Override
