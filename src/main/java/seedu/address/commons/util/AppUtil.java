@@ -61,7 +61,10 @@ public class AppUtil {
                 continue;
             }
             if (msg.contains("No toolkit found")
+                    || msg.contains("Toolkit not initialized")
+                    || msg.contains("Internal graphics not initialized")
                     || msg.contains("Error initializing QuantumRenderer")
+                    || msg.contains("Graphics Device initialization failed")
                     || msg.contains("no suitable pipeline")) {
                 return true;
             }
