@@ -26,6 +26,9 @@ public class AliasCommandParser implements Parser<AliasCommand> {
             }
             return new AliasCommand("remove", tokens[1], null);
         } else if (action.equals("list")) {
+            if (tokens.length != 1) {
+                throw new ParseException(AliasCommand.MESSAGE_USAGE);
+            }
             return new AliasCommand("list", null, null);
         } else {
             throw new ParseException(AliasCommand.MESSAGE_USAGE);

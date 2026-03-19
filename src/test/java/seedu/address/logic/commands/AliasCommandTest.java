@@ -34,6 +34,13 @@ public class AliasCommandTest {
     }
 
     @Test
+    public void execute_addAlias_invalidTarget() {
+        AliasCommand command = new AliasCommand("add", "foo", "nonexistent");
+        CommandException exception = assertThrows(CommandException.class, () -> command.execute(model));
+        assertEquals(String.format(AliasCommand.MESSAGE_INVALID_TARGET, "nonexistent"), exception.getMessage());
+    }
+
+    @Test
     public void execute_removeAlias_success() throws Exception {
         AliasCommand cmd = new AliasCommand("add", "lc", "list");
         cmd.execute(model);

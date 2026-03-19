@@ -38,7 +38,10 @@ public class PersonCardTest {
                     latch.countDown();
                 }
             });
-        } catch (IllegalStateException | UnsupportedOperationException e) {
+        } catch (IllegalStateException e) {
+            latch.countDown();
+        } catch (UnsupportedOperationException e) {
+            startupThrowable.set(e);
             latch.countDown();
         }
         assertTrue(latch.await(FX_TIMEOUT_SECONDS, TimeUnit.SECONDS), "Timed out waiting for JavaFX toolkit startup.");

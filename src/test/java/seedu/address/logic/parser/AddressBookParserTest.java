@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.AliasCommand;
 import seedu.address.logic.commands.ArchiveCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.DeleteCommand;
@@ -193,6 +194,14 @@ public class AddressBookParserTest {
         UnarchiveCommand command = (UnarchiveCommand) parser.parseCommand(
                 UnarchiveCommand.COMMAND_WORD + " " + INDEX_FIRST_PERSON.getOneBased());
         assertEquals(new UnarchiveCommand(INDEX_FIRST_PERSON), command);
+    }
+
+    /**
+     * Verifies parsing of {@code alias} commands.
+     */
+    @Test
+    public void parseCommand_alias() {
+        assertThrows(ParseException.class, AliasCommand.MESSAGE_USAGE, () -> parser.parseCommand("alias list extra"));
     }
 
     /**

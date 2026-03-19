@@ -20,9 +20,7 @@ public class AliasCommand extends Command {
     public static final String MESSAGE_REMOVE_FAIL = "Alias '%s' not found.";
     public static final String MESSAGE_LIST = "Aliases:\n%s";
 
-    public static final Set<String> RESERVED_COMMAND_WORDS = Set.of(
-            "add", "archive", "edit", "delete", "star", "unstar", "clear", "list", "listarchived", "exit", "help",
-            "remark", "sort", "filter", "find", "unarchive", "alias");
+    public static final Set<String> RESERVED_COMMAND_WORDS = buildReservedCommandWords();
 
     private static final AliasRegistry aliasRegistry = new AliasRegistry();
 
@@ -37,6 +35,27 @@ public class AliasCommand extends Command {
         this.action = action;
         this.alias = alias;
         this.command = command;
+    }
+
+    private static Set<String> buildReservedCommandWords() {
+        return Set.of(
+                AddCommand.COMMAND_WORD,
+                ArchiveCommand.COMMAND_WORD,
+                EditCommand.COMMAND_WORD,
+                DeleteCommand.COMMAND_WORD,
+                StarCommand.COMMAND_WORD,
+                UnstarCommand.COMMAND_WORD,
+                ClearCommand.COMMAND_WORD,
+                ListCommand.COMMAND_WORD,
+                ListCommand.ARCHIVED_COMMAND_WORD,
+                ExitCommand.COMMAND_WORD,
+                HelpCommand.COMMAND_WORD,
+                RemarkCommand.COMMAND_WORD,
+                SortCommand.COMMAND_WORD,
+                FilterCommand.COMMAND_WORD,
+                FindCommand.COMMAND_WORD,
+                UnarchiveCommand.COMMAND_WORD,
+                AliasCommand.COMMAND_WORD);
     }
 
     /** Returns the shared alias registry used by the application. */
